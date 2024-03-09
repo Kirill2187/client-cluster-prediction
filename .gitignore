@@ -1,4 +1,6 @@
 .idea/
+.vscode/
+catboost_info/
 __pycache__/
 data/train_data.pqt
 data/test_data.pqt
