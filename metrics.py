@@ -8,6 +8,9 @@ def weighted_roc_auc(y_true, y_pred, labels, weights_dict):
     weights = unnorm_weights / unnorm_weights.sum()
     classes_roc_auc = roc_auc_score(y_true, y_pred, labels=labels,
                                     multi_class="ovr", average=None)
+
+    print({labels[i]: classes_roc_auc[i] for i in range(len(labels))})
+
     return sum(weights * classes_roc_auc)
 
 cluster_weights_ = get_cluster_weights()
